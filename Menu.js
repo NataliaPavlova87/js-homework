@@ -10,10 +10,14 @@ class Menu {
             if (this.items[i] instanceof MenuItem){
                 result += this.items[i].renderItem();
             } else if (this.items[i] instanceof subMenu) {
-                result += this.items[i]. rendersubMenu();
+                result += this.items[i]. renderSubMenu();
             }
         }
         result += '</ul>';
         return result;
+    }
+    removeMenu() {
+        let menu = document.querySelector(`#${this.id}`);
+        menu.remove();
     }
 }
