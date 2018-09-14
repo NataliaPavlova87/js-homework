@@ -8,6 +8,7 @@
     <div id="menu"></div>
 <script src="Menu.js"></script>
 <script src="Menuitem.js"></script>
+<script src="Submenu.js"></script>
 <script>
     window.onload = function(){
         // DOM ready
@@ -19,10 +20,18 @@
             new MenuItem('/contacts', 'Contacts'),
             new MenuItem('/blog', 'Blog'),
             new MenuItem('/policy', 'Policy'),
-            new subMenu('me', 'me', 'me')
+            new subMenu ('me', 'me', [
+            new MenuItem('/', 'Home'),
+            new MenuItem('/about', 'About'),
+            new MenuItem('/contacts', 'Contacts'),
+            new MenuItem('/blog', 'Blog'),
+            new MenuItem('/policy', 'Policy'),
+            ])
         ]);
 
         menuBlock.innerHTML = menu.render();
+        
+        menu.removeMenu();
     }
 </script>
 </body>
